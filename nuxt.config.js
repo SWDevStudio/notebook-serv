@@ -9,7 +9,10 @@ export default {
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
-  target: 'server',
+  target: 'static',
+  router: {
+    base: '/notebook/'
+  },
   /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
@@ -34,8 +37,7 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [
-  ],
+  plugins: [{ src: '~/plugins/localStorage.js', ssr: false }],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -62,11 +64,10 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {}
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
-  build: {
-  }
+
 }
